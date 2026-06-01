@@ -16,13 +16,13 @@ function CountUp({ target }: { target: number }) {
           started.current = true;
           const duration = 1600;
           const t0 = performance.now();
-          function tick(now: number) {
+          const tick = (now: number) => {
             const p = Math.min((now - t0) / duration, 1);
             const eased = 1 - Math.pow(1 - p, 3);
             setValue(Math.floor(eased * target));
             if (p < 1) requestAnimationFrame(tick);
             else setValue(target);
-          }
+          };
           requestAnimationFrame(tick);
           observer.disconnect();
         }
