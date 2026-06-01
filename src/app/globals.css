@@ -106,7 +106,7 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bo
 .hero-dot.active { opacity: 1; transform: scale(1.3); }
 
 .hero-badge { display: inline-block; background: var(--light); color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.5rem; animation: fadeSlideUp .5s .05s ease both; }
-.hero h1 { font-size: clamp(22px, 2.3vw, 34px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -.02em; animation: fadeSlideUp .65s .18s ease both; }
+.hero h1 { font-size: clamp(28px, 3.2vw, 44px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -.02em; animation: fadeSlideUp .65s .18s ease both; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero p { font-size: 17px; color: #43586a; line-height: 1.75; margin-bottom: 2.25rem; animation: fadeSlideUp .65s .32s ease both; }
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp .65s .46s ease both; }
@@ -301,9 +301,11 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,.07); p
   
   .sobre-watermark { display: none; }
   
-  .numeros-grid { grid-template-columns: 1fr; border-radius: 12px; width: 100%; margin-left: 0; transform: none; padding: 1.5rem 1rem; margin-top: 2.5rem; gap: 2rem; }
+  .numeros-grid { grid-template-columns: 1fr; border-radius: 12px; width: 100%; margin-left: 0; transform: none; padding: 2rem 1.5rem; margin-top: 2.5rem; gap: 2.5rem; }
   .numero-card + .numero-card::before { display: none; }
-  .numero-valor { font-size: 32px; }
+  .numero-valor { font-size: 46px; }
+  .numero-mapa { height: 72px; }
+  .numero-label { font-size: 17px; }
   
   .servico-card { padding: 1.25rem; flex-direction: column; gap: 1rem; }
   .servico-card::after { top: 1.5rem; right: 1.25rem; }
