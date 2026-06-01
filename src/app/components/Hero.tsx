@@ -27,16 +27,13 @@ export default function Hero() {
       <div className="hero-left">
         <div className="hero-badge">Desde 2014</div>
         <h1>
-          Especialistas em esquadrias e<br className="desktop-only" />
-          fachadas com <em>40 anos de expertise</em>
-          <br className="desktop-only" />
+          Especialistas em esquadrias e <br className="desktop-only" />
+          fachadas com <em>40 anos de expertise</em> <br className="desktop-only" />
           aplicada ao seu projeto.
         </h1>
         <p>
-          Analisamos, especificamos e validamos cada detalhe técnico
-          <br className="desktop-only" />
-          de esquadrias de alumínio, fachadas e revestimentos, eliminando
-          <br className="desktop-only" />
+          Analisamos, especificamos e validamos cada detalhe técnico <br className="desktop-only" />
+          de esquadrias de alumínio, fachadas e revestimentos, eliminando <br className="desktop-only" />
           incompatibilidades antes que se tornem problemas na obra.
         </p>
         <div className="hero-ctas">

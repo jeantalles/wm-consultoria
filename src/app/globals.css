@@ -294,7 +294,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,.07); p
   .hamburger { display: flex; }
   
   .hero-left { padding: 2.5rem 1.5rem; }
-  .hero h1 { font-size: 28px; }
+  .hero h1 { font-size: 24px; }
   .hero p { font-size: 16px; margin-bottom: 1.75rem; }
   .hero-ctas { flex-direction: column; width: 100%; align-items: stretch; gap: 0.75rem; }
   .hero-ctas a { text-align: center; }
