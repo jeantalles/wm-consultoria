@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.claude/
+wm-site/.next/
+wm-site/node_modules/
+*.env
+*.env.local

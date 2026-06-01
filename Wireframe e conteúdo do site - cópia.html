@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WM Consultoria — Wireframe + Copy | Site One Page</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0e1e2e;
+      --teal:    #0d3349;
+      --accent:  #2a8fc4;
+      --light:   #e8f4fb;
+      --gray:    #f4f5f7;
+      --mid:     #66798a;
+      --white:   #ffffff;
+      --green-wa:#2A8FC4;
+      --text:    #1a2836;
+      --border:  #d0dce6;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text); line-height: 1.6; font-size: 16px; }
+
+    .wf-badge { position: fixed; bottom: 1rem; right: 1rem; background: #ff6b35; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 20px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .img-ph { background: #c8d5e0; display: flex; align-items: center; justify-content: center; color: #7a9ab0; font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; border-radius: 4px; }
+    .section-label { display: inline-block; font-size: 14px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: .85rem; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    .wf-note { background: #fffbea; border: 1px solid #f5d76e; border-left: 4px solid #f5a623; border-radius: 4px; padding: 10px 14px; font-size: 12px; color: #7a5f10; margin-top: 2rem; line-height: 1.5; }
+    .wf-note strong { color: #5c4210; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-wa { background: var(--green-wa); color: #fff !important; text-decoration: none; font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 6px; transition: opacity .2s; }
+    .btn-wa:hover { opacity: .88; }
+
+    /* ── HERO ANIMATIONS ── */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideRight {
+      from { opacity: 0; transform: translateX(36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+    @keyframes floatUpDown2 {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 10fr 11fr;
+      min-height: calc(100vh - 64px);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 0;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 5rem 0 4rem 6rem;
+      background: var(--white);
+      position: relative; z-index: 1;
+    }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-slide-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-slide-img.active { opacity: 1; }
+    .hero-dots {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: .45rem;
+      z-index: 2;
+    }
+    .hero-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: .45;
+      transition: opacity .3s, transform .3s;
+      cursor: pointer;
+    }
+    .hero-dot.active { opacity: 1; transform: scale(1.3); }
+
+    .hero-badge { display: inline-block; background: var(--light); color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.5rem; animation: fadeSlideUp .5s .05s ease both; }
+    .hero h1 { font-size: clamp(22px, 2.3vw, 34px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -.02em; animation: fadeSlideUp .65s .18s ease both; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { font-size: 17px; color: #43586a; line-height: 1.75; margin-bottom: 2.25rem; animation: fadeSlideUp .65s .32s ease both; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp .65s .46s ease both; }
+    .btn-primary { background: var(--accent); color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 13px 26px; border-radius: 6px; transition: background .2s, transform .2s, box-shadow .2s; display: inline-block; }
+    .btn-primary:hover { background: #1e78ad; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(42,143,196,.35); }
+    .btn-outline { border: 2px solid var(--border); color: var(--navy); text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 26px; border-radius: 6px; transition: border-color .2s, color .2s, transform .2s; display: inline-block; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 0; margin-top: 2.75rem; border-top: 1px solid var(--border); padding-top: 2rem; animation: fadeSlideUp .65s .58s ease both; }
+    .hero-stat { display: flex; flex-direction: column; gap: .25rem; flex: 1; }
+    .hero-stat + .hero-stat { border-left: 1px solid var(--border); padding-left: 1.5rem; }
+    .hero-stat strong { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1; }
+    .hero-stat strong em { font-style: normal; color: var(--navy); }
+    .hero-stat > span { font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .09em; margin-top: .1rem; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 0; }
+    .section-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: .75rem; letter-spacing: -.01em; }
+    .section-sub { font-size: 20px; color: var(--mid); max-width: 680px; line-height: 1.65; }
+    .section-header { margin-bottom: 3rem; }
+
+    /* ── SOBRE ── */
+    .sobre { background: var(--gray); position: relative; overflow: hidden; }
+    .sobre-watermark { position: absolute; bottom: -60px; right: -60px; width: 520px; opacity: 0.07; pointer-events: none; user-select: none; }
+    .sobre-header { margin-bottom: 3rem; }
+    .sobre-grid { display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: center; }
+    .sobre-text p { font-size: 16px; color: #354b5c; line-height: 1.7; margin-bottom: 1rem; text-align: justify; }
+    .sobre-tagline { display: inline-block; font-size: 20px; font-weight: 800; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 1rem; margin-top: .5rem; font-style: italic; letter-spacing: -.01em; }
+    .sobre-photo { width: 100%; height: 460px; object-fit: cover; border-radius: 8px; }
+
+    /* ── NÚMEROS (faixa dentro de "A empresa") ── */
+    .numeros-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; z-index: 1; width: min(1320px, 94vw); margin-left: 50%; transform: translateX(-50%); background: #2A8FC4; border-radius: 18px; padding: 1.75rem 1.5rem; margin-top: 4rem; box-shadow: 0 16px 40px rgba(20,60,100,.16); }
+    .numero-card { padding: .5rem 1.75rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: .55rem; position: relative; }
+    .numero-card + .numero-card::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 78%; background: rgba(255,255,255,.28); }
+    .numero-valor { font-size: clamp(34px, 4vw, 50px); font-weight: 800; color: var(--white); letter-spacing: -.03em; line-height: 1; }
+    .numero-valor sup { font-size: 52%; vertical-align: super; opacity: .9; font-weight: 700; }
+    .numero-icon { color: var(--white); }
+    .numero-icon svg { width: clamp(34px, 4vw, 48px); height: clamp(34px, 4vw, 48px); display: block; }
+    .numero-mapa { width: auto; height: clamp(46px, 5.5vw, 66px); display: block; object-fit: contain; }
+    .numero-label { font-size: 15px; color: rgba(255,255,255,.9); font-weight: 600; line-height: 1.45; }
+
+    /* ── SERVIÇOS ── */
+    .servicos { background: var(--white); }
+    .servicos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; align-items: start; }
+    .servico-card { padding: 1.6rem 3.25rem 1.6rem 1.75rem; background: var(--white); border: 1px solid var(--border); border-radius: 14px; transition: border-color .2s, box-shadow .2s; display: flex; gap: 1.25rem; align-items: flex-start; cursor: pointer; position: relative; }
+    .servico-card:hover { border-color: #2A8FC4; box-shadow: 0 6px 22px rgba(20,40,80,.07); }
+    .servico-card::after { content: ''; position: absolute; top: 2.05rem; right: 1.75rem; width: 9px; height: 9px; border-right: 2px solid var(--mid); border-bottom: 2px solid var(--mid); transform: rotate(45deg); transition: transform .3s ease; }
+    .servico-card.open::after { transform: rotate(-135deg); }
+    .servico-icon { width: 46px; height: 46px; background: #2A8FC4; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--white); margin-top: .1rem; }
+    .servico-body { flex: 1; }
+    .servico-num { font-size: 13px; font-weight: 800; letter-spacing: .12em; color: #2A8FC4; text-transform: uppercase; margin-bottom: .3rem; }
+    .servico-card h3 { font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 0; line-height: 1.25; }
+    .servico-card p { font-size: 16px; color: #43586a; line-height: 1.72; max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; transition: max-height .4s ease, opacity .3s ease, margin-top .3s ease; }
+    .servico-card.open p { max-height: 320px; opacity: 1; margin-top: .65rem; }
+    .servico-full { grid-column: 1 / -1; }
+
+    /* ── PROJETOS ── */
+    .projetos { background: var(--gray); }
+    .projetos .container { max-width: 1280px; }
+    .projetos .section-sub { max-width: none; white-space: nowrap; }
+    .projetos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; margin-bottom: 2.5rem; }
+    .projeto-card { background: var(--white); border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; display: block; box-shadow: 0 2px 8px rgba(14,30,46,.06); }
+    .projeto-card:hover { box-shadow: 0 2px 8px rgba(14,30,46,.06); }
+    .projeto-img-wrap { position: relative; overflow: hidden; }
+    .projeto-img { width: 100%; height: 320px; object-fit: cover; display: block; }
+    .projeto-overlay { display: none; }
+    .projetos-grid .projeto-card:nth-of-type(n+7) { display: none; }
+    .projeto-info { padding: 1.5rem 1.75rem; }
+    .projeto-info h4 { font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: .45rem; }
+    .projeto-meta { font-size: 17px; color: var(--mid); font-weight: 700; }
+    .projetos-cta { text-align: center; }
+    .btn-ghost { border: 2px solid var(--accent); color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 6px; display: inline-block; transition: background .2s, color .2s; }
+    .btn-ghost:hover { background: var(--accent); color: #fff; }
+
+    /* ── CLIENTES ── */
+    .clientes { background: var(--white); }
+    .logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .logo-item { display: flex; align-items: center; justify-content: center; padding: .75rem; border: 1px solid var(--border); min-height: 128px; background: var(--white); transition: background .2s; }
+    .logo-item:hover { background: var(--gray); }
+    .logo-item img { display: block; width: 100%; max-width: 150px; max-height: 96px; object-fit: contain; opacity: .96; transition: opacity .2s, transform .2s; }
+    .logo-item:hover img { opacity: 1; transform: scale(1.03); }
+
+    /* ── DEPOIMENTOS ── */
+    .depoimentos { background: #2B8FC5; padding: 160px 0; }
+    .depoimentos .section-label { color: rgba(255,255,255,.85); }
+    .depoimentos .section-title { color: var(--white); }
+    .depoimentos .section-sub { color: rgba(255,255,255,.9); }
+    .depo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 1rem; }
+    .depo-placeholder { background: var(--white); border: 1px solid rgba(42,143,196,.15); border-radius: 12px; padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 340px; gap: .75rem; text-align: center; box-shadow: 0 6px 24px rgba(20,60,100,.07); }
+    .depo-placeholder strong { font-size: 16px; color: var(--navy); }
+    .depo-placeholder p { font-size: 14px; color: var(--mid); }
+
+    /* ── CONTATO ── */
+    .contato { background: var(--navy); padding: 120px 0; position: relative; overflow: hidden; }
+    .contato-bg { position: absolute; inset: 0; z-index: 0; }
+    .contato-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .contato .container { position: relative; z-index: 1; display: flex; justify-content: flex-start; max-width: none; padding: 0 8%; }
+    .contato-box { background: rgba(223,233,240,.95); border-radius: 18px; padding: 3rem 3.25rem; width: 100%; max-width: 520px; box-shadow: 0 24px 60px rgba(14,30,46,.25); backdrop-filter: blur(2px); }
+    .contato-grid { position: relative; z-index: 1; }
+    .contato-info h2 { font-size: 32px; font-weight: 600; color: var(--navy); margin-bottom: .75rem; letter-spacing: -.01em; }
+    .contato-info > p { font-size: 18px; color: #43586a; line-height: 1.72; margin-bottom: 2rem; }
+    .contato-item { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+    .contato-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--white); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: #2A8FC4; flex-shrink: 0; }
+    .contato-item-text { font-size: 17px; color: var(--text); font-weight: 600; }
+    .contato-item-label { font-size: 12px; color: var(--mid); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: .5rem; background: #2B8FC5; color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 13px 24px; border-radius: 8px; margin-top: 1.5rem; transition: opacity .2s; }
+    .btn-whatsapp:hover { opacity: .88; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,.07); padding: 2.5rem 0; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { text-decoration: none; display: flex; align-items: center; }
+    .footer-logo img { height: 42px; width: auto; display: block; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.35); }
+    .footer-social { display: flex; gap: .75rem; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); text-decoration: none; font-size: 13px; font-weight: 700; transition: border-color .2s, color .2s; }
+    .footer-social a:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+
+    @media (max-width: 900px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+      .projetos-grid { grid-template-columns: 1fr; }
+      .projeto-img { height: 280px; }
+      .logo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .projeto-img { height: 230px; }
+      .logo-grid { grid-template-columns: repeat(2, 1fr); }
+      .logo-item { min-height: 108px; padding: .7rem; }
+      .logo-item img { max-width: 132px; max-height: 84px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wf-badge">Wireframe · WM Consultoria</div>
+
+  <!-- ══ NAV ══ -->
+  <nav id="topo">
+    <div class="nav-inner">
+      <a href="#topo" class="nav-logo"><img src="img/logo.png" alt="WM Consultoria"></a>
+      <div class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#contato">Contato</a>
+        <a href="https://wa.me/5551999759015" class="btn-wa">Fale conosco</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ 1 · HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Desde 2014</div>
+      <h1>Especialistas em esquadrias e<br>fachadas com <em>40 anos de expertise</em><br>aplicada ao seu projeto.</h1>
+      <p>Analisamos, especificamos e validamos cada detalhe técnico<br>de esquadrias de alumínio, fachadas e revestimentos, eliminando<br>incompatibilidades antes que se tornem problemas na obra.</p>
+      <div class="hero-ctas">
+        <a href="#servicos" class="btn-primary">Conheça nossos serviços</a>
+        <a href="#projetos" class="btn-outline">Veja nossos projetos</a>
+      </div>
+    </div>
+    <div class="hero-right" id="heroRight">
+      <div class="hero-slide-img active" style="background-image:url('img/hero-1.jpg')"></div>
+      <div class="hero-slide-img" style="background-image:url('img/hero-2.jpg')"></div>
+      <div class="hero-slide-img" style="background-image:url('img/hero-3.jpg')"></div>
+      <div class="hero-slide-img" style="background-image:url('img/hero-4.jpg')"></div>
+      <div class="hero-slide-img" style="background-image:url('img/hero-5.jpg')"></div>
+      <div class="hero-dots" id="heroDots">
+        <div class="hero-dot active" data-i="0"></div>
+        <div class="hero-dot" data-i="1"></div>
+        <div class="hero-dot" data-i="2"></div>
+        <div class="hero-dot" data-i="3"></div>
+        <div class="hero-dot" data-i="4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2 · SOBRE ══ -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <img src="img/watermark.png" alt="" class="sobre-watermark" aria-hidden="true">
+      <div class="sobre-header">
+        <span class="section-label">A empresa</span>
+        <h2 class="section-title">Referência técnica em projetos de<br>esquadrias, fachadas e revestimentos.</h2>
+      </div>
+      <div class="sobre-grid">
+        <img src="img/sobre.jpg" alt="Edifício com fachada e esquadrias em destaque" class="sobre-photo">
+        <div class="sobre-text">
+          <p>A WM Consultoria atua desde 2014 na análise e desenvolvimento de projetos de esquadrias de alumínio, fachadas e revestimentos para construtoras e incorporadoras em todo o Brasil.</p>
+          <p>À frente da empresa, a Arq. Miriam Pereira reúne mais de 40 anos de experiência na coordenação de projetos com as principais construtoras do país, incluindo 13 anos à frente do departamento técnico do maior distribuidor de alumínio da América Latina.</p>
+          <p>A consultoria atua como elo técnico entre arquitetura, estrutura e execução, garantindo compatibilidade, desempenho e viabilidade econômica em cada etapa do projeto.</p>
+          <div class="sobre-tagline">Onde outros veem limites, nós encontramos soluções</div>
+        </div>
+      </div>
+
+      <div class="numeros-grid" id="numeros">
+
+        <div class="numero-card">
+          <div class="numero-valor"><sup>+</sup><span class="count-up" data-target="40">0</span></div>
+          <div class="numero-label">anos de experiência<br>na área</div>
+        </div>
+
+        <div class="numero-card">
+          <div class="numero-valor">2014</div>
+          <div class="numero-label">ano de fundação<br>da consultoria</div>
+        </div>
+
+        <div class="numero-card">
+          <div class="numero-valor"><sup>+</sup><span class="count-up" data-target="28">0</span></div>
+          <div class="numero-label">construtoras e incorporadoras<br>atendidas</div>
+        </div>
+
+        <div class="numero-card">
+          <div class="numero-icon">
+            <img src="img/mapa-brasil.png" alt="Mapa do Brasil" class="numero-mapa">
+          </div>
+          <div class="numero-label">atuação em todo<br>o território nacional</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4 · SERVIÇOS ══ -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Serviços</span>
+        <h2 class="section-title">Soluções técnicas em todas as fases do projeto.</h2>
+        <p class="section-sub">Da análise inicial à validação final, garantimos precisão técnica e conformidade normativa em cada entrega.</p>
+      </div>
+      <div class="servicos-grid">
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Lupa / análise -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">01</div>
+            <h3>Análise de Projetos</h3>
+            <p>Compatibilidade técnica entre projeto arquitetônico, estrutural e de esquadrias. Relatório de otimização com foco em desempenho e custo-benefício.</p>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Documento técnico -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">02</div>
+            <h3>Caderno de Detalhes Técnicos</h3>
+            <p>Detalhamento 2D de esquadrias com especificação de perfis, acessórios, vidros, ferragens e acabamentos, em conformidade com as normas ABNT vigentes.</p>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Lista / encargos -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">03</div>
+            <h3>Caderno de Encargos</h3>
+            <p>Guia técnico completo com especificações, critérios e procedimentos padronizados para o perfeito funcionamento do sistema.</p>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Janela / vidro -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="2" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">04</div>
+            <h3>Especificação de Vidro</h3>
+            <p>Recomendação das soluções em vidro mais adequadas ao projeto, com atendimento às normas regulatórias ABNT.</p>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Sliders / equalização -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">05</div>
+            <h3>Equalização Comercial</h3>
+            <p>Suporte na análise e comparação de propostas comerciais, garantindo processos de concorrência equilibrados e tecnicamente embasados.</p>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-icon">
+            <!-- Escudo / validação -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l8 4v6c0 5-4 9-8 10-4-1-8-5-8-10V6z"/><polyline points="9,12 11,14 15,10"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">06</div>
+            <h3>Validação do Projeto</h3>
+            <p>Revisão do projeto executivo elaborado pelo fabricante ou fornecedor de esquadrias, assegurando conformidade técnica.</p>
+          </div>
+        </div>
+
+        <div class="servico-card servico-full">
+          <div class="servico-icon">
+            <!-- Localização / vistoria -->
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="servico-body">
+            <div class="servico-num">07</div>
+            <h3>Vistoria Presencial</h3>
+            <p>Verificação in loco da conformidade do projeto, da fabricação e da instalação com os requisitos normativos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 5 · PROJETOS ══ -->
+  <section class="projetos" id="projetos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Projetos</span>
+        <h2 class="section-title">Desenvolvidos com as principais construtoras do Brasil.</h2>
+        <p class="section-sub">Projetos de alto nível realizados em parceria com as maiores <strong>incorporadoras do país.</strong></p>
+      </div>
+      <div class="projetos-grid">
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2022/12/16-T-Lamborghini-Embraed-imagem-3-295x300.jpg" alt="Tonino Lamborghini" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>Tonino Lamborghini Residences</h4>
+            <div class="projeto-meta">Embraed · Florianópolis, SC</div>
+          </div>
+        </a>
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2024/02/17-ARTESANO-PLAENGE-2-300x169.jpg" alt="Artesano" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>Artesano</h4>
+            <div class="projeto-meta">Plaenge · Curitiba, PR</div>
+          </div>
+        </a>
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2022/12/12-New-York-Embraed-imagem-3-300x300.jpg" alt="New York Apartments" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>New York Apartments</h4>
+            <div class="projeto-meta">Embraed · Florianópolis, SC</div>
+          </div>
+        </a>
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2022/12/49-Ode-Perdizes-Tegra-imagem2-300x150.jpg" alt="Ode Perdizes" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>Ode Perdizes</h4>
+            <div class="projeto-meta">Tegra Incorporadora · São Paulo, SP</div>
+          </div>
+        </a>
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2024/02/10-PIAZZA-QUADRA-1-300x169.jpg" alt="Piazza By Quadra" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>Piazza By Quadra</h4>
+            <div class="projeto-meta">Quadra Engenharia · Belém, PA</div>
+          </div>
+        </a>
+
+        <a href="WM-Consultoria-Projeto-Template.html" class="projeto-card">
+          <div class="projeto-img-wrap">
+            <img src="https://wmconsultoria.com/wp-content/uploads/2023/08/Nature-Elmo-Imagem-1-255x300.jpg" alt="Nature Elmo" class="projeto-img">
+          </div>
+          <div class="projeto-info">
+            <h4>Nature</h4>
+            <div class="projeto-meta">Elmo Engenharia · RS</div>
+          </div>
+        </a>
+
+      </div>
+      <div class="projetos-cta">
+        <a href="WM-Consultoria-Projeto-Template.html" class="btn-ghost">Ver todos os projetos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · CLIENTES ══ -->
+  <section class="clientes" id="clientes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Clientes</span>
+        <h2 class="section-title">Empresas que confiam no nosso trabalho.</h2>
+      </div>
+      <div class="logo-grid">
+        <div class="logo-item"><img src="wm-logos/34.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/6.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/15.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/33.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/35.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/36.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/37.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/38.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/39.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/1.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/2.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/3.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/4.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/5.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/7.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/8.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/9.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/10.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/11.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/12.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/13.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/14.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/16.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/17.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/18.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/19.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/20.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/21.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/22.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/23.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/24.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/25.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/26.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/27.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/28.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+        <div class="logo-item"><img src="wm-logos/29.png" alt="Logo de cliente WM Consultoria" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7 · DEPOIMENTOS ══ -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" style="color:rgba(255,255,255,.85)">Depoimentos</span>
+        <h2 class="section-title">O que dizem sobre o nosso trabalho.</h2>
+      </div>
+      <div class="depo-grid">
+        <div class="depo-placeholder">
+          <strong>Depoimento 1</strong>
+          <p>Aguardando texto do cliente.<br>Nome · Cargo · Empresa</p>
+        </div>
+        <div class="depo-placeholder">
+          <strong>Depoimento 2</strong>
+          <p>Aguardando texto do cliente.<br>Nome · Cargo · Empresa</p>
+        </div>
+        <div class="depo-placeholder">
+          <strong>Depoimento 3</strong>
+          <p>Aguardando texto do cliente.<br>Nome · Cargo · Empresa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8 · CONTATO ══ -->
+  <section class="contato" id="contato">
+    <div class="contato-bg">
+      <img src="img/contato.jpg" alt="Edifício ao entardecer em Porto Alegre">
+    </div>
+    <div class="container">
+      <div class="contato-box">
+      <div class="contato-grid">
+
+        <div class="contato-info">
+          <span class="section-label">Contato</span>
+          <h2>Fale com a WM Consultoria.</h2>
+          <p>Pronto para iniciar um projeto ou tirar uma dúvida técnica? Entre em contato.</p>
+
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.32a8.17 8.17 0 0 1-1.26-4.34c0-4.54 3.7-8.24 8.25-8.24zm-2.7 4.43c-.13 0-.34.05-.52.24-.18.2-.69.68-.69 1.65 0 .97.71 1.91.81 2.04.1.13 1.39 2.12 3.37 2.98.47.2.84.32 1.13.42.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.85.12-.94-.05-.08-.18-.13-.38-.23-.2-.1-1.17-.58-1.35-.64-.18-.07-.32-.1-.45.1-.13.2-.51.64-.63.77-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.11-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.34.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.32-.33-.45-.34-.11 0-.25-.01-.38-.01z"/></svg>
+            </div>
+            <div>
+              <div class="contato-item-label">WhatsApp</div>
+              <div class="contato-item-text">(51) 99975-9015</div>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </div>
+            <div>
+              <div class="contato-item-label">E-mail</div>
+              <div class="contato-item-text">miriam@wmconsultoria.com</div>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <div>
+              <div class="contato-item-label">Instagram</div>
+              <div class="contato-item-text">@wm_consultoriaa</div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5551999759015" class="btn-whatsapp">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Conversar no WhatsApp
+          </a>
+        </div>
+
+        <!-- Imagem no lugar do formulário -->
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#topo" class="footer-logo"><img src="img/logo.png" alt="WM Consultoria"></a>
+      <div class="footer-copy">© 2026 WM Consultoria. Todos os direitos reservados. · Arq. Miriam Pereira</div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/5551999759015" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.32a8.17 8.17 0 0 1-1.26-4.34c0-4.54 3.7-8.24 8.25-8.24zm-2.7 4.43c-.13 0-.34.05-.52.24-.18.2-.69.68-.69 1.65 0 .97.71 1.91.81 2.04.1.13 1.39 2.12 3.37 2.98.47.2.84.32 1.13.42.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.85.12-.94-.05-.08-.18-.13-.38-.23-.2-.1-1.17-.58-1.35-.64-.18-.07-.32-.1-.45.1-.13.2-.51.64-.63.77-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.11-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.34.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.32-.33-.45-.34-.11 0-.25-.01-.38-.01z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const imgs  = document.querySelectorAll('.hero-slide-img');
+      const dots  = document.querySelectorAll('.hero-dot');
+      const total = imgs.length;
+      let current = 0;
+      let timer;
+
+      function goTo(n) {
+        imgs[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = n;
+        imgs[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      dots.forEach(d => d.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(parseInt(d.dataset.i));
+        timer = setInterval(next, 5000);
+      }));
+
+      function next() { goTo((current + 1) % total); }
+      timer = setInterval(next, 5000);
+    })();
+  </script>
+
+  <script>
+    document.querySelectorAll('.count-up').forEach(el => {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1600;
+      let started = false;
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !started) {
+          started = true;
+          const t0 = performance.now();
+          function tick(now) {
+            const p = Math.min((now - t0) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(eased * target);
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      }, { threshold: 0.4 });
+      observer.observe(el);
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('.servico-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
