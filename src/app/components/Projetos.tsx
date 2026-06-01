@@ -52,7 +52,7 @@ export default function Projetos() {
           </p>
         </div>
         <div className="projetos-grid">
-          {projetos.map((p, i) => (
+          {projetos.slice(0, 4).map((p, i) => (
             <a key={i} href="#projetos" className="projeto-card">
               <div className="projeto-img-wrap">
                 <img src={p.img} alt={p.alt} className="projeto-img" />
