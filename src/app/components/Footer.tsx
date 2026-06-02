@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-inner">
-        <a href="#topo" className="footer-logo">
+        <a href="/#hero" className="footer-logo">
           <img src="/img/logo.png" alt="WM Consultoria" />
         </a>
         <div className="footer-copy">

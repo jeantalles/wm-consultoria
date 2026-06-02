@@ -21,15 +21,15 @@ export default function Nav() {
   return (
     <nav id="topo">
       <div className="nav-inner">
-        <a href="#hero" className="nav-logo" onClick={closeMenu}>
+        <a href="/#hero" className="nav-logo" onClick={closeMenu}>
           <img src="/img/logo.png" alt="WM Consultoria" />
         </a>
         
         <div className="nav-links desktop-only">
-          <a href="#servicos">Serviços</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#clientes">Clientes</a>
-          <a href="#contato">Contato</a>
+          <a href="/#servicos">Serviços</a>
+          <a href="/#projetos">Projetos</a>
+          <a href="/#clientes">Clientes</a>
+          <a href="/#contato">Contato</a>
           <a href="https://wa.me/5551999759015" className="btn-wa">
             Fale conosco
           </a>
@@ -48,10 +48,10 @@ export default function Nav() {
         <div className={`mobile-menu-overlay ${isOpen ? "open" : ""}`} onClick={closeMenu}></div>
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
           <div className="mobile-menu-inner">
-            <a href="#servicos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "1" } as React.CSSProperties}>Serviços</a>
-            <a href="#projetos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "2" } as React.CSSProperties}>Projetos</a>
-            <a href="#clientes" onClick={closeMenu} className="mobile-link" style={{ "--delay": "3" } as React.CSSProperties}>Clientes</a>
-            <a href="#contato" onClick={closeMenu} className="mobile-link" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
+            <a href="/#servicos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "1" } as React.CSSProperties}>Serviços</a>
+            <a href="/#projetos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "2" } as React.CSSProperties}>Projetos</a>
+            <a href="/#clientes" onClick={closeMenu} className="mobile-link" style={{ "--delay": "3" } as React.CSSProperties}>Clientes</a>
+            <a href="/#contato" onClick={closeMenu} className="mobile-link" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
             <a href="https://wa.me/5551999759015" onClick={closeMenu} className="btn-wa mobile-cta" style={{ "--delay": "5" } as React.CSSProperties}>
               Fale conosco
             </a>
