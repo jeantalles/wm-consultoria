@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <nav id="topo">
       <div className="nav-inner">
-        <a href="#topo" className="nav-logo" onClick={closeMenu}>
+        <a href="#hero" className="nav-logo" onClick={closeMenu}>
           <img src="/img/logo.png" alt="WM Consultoria" />
         </a>
         
