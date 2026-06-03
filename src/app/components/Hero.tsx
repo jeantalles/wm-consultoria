@@ -8,6 +8,7 @@ const slides = [
   "/img/hero-3.jpg",
   "/img/hero-4.jpg",
   "/img/hero-5.jpg",
+  "/img/hero-6.jpg",
 ];
 
 export default function Hero() {

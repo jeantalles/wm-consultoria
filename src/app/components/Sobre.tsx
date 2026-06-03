@@ -13,9 +13,7 @@ export default function Sobre() {
         <div className="sobre-header">
           <span className="section-label">A empresa</span>
           <h2 className="section-title">
-            Referência técnica em projetos de
-            <br />
-            esquadrias, fachadas e revestimentos.
+            Colaboramos com projetos visionários e de ponta. Nosso compromisso é com a excelência técnica e a inovação na engenharia de esquadrias em alumínio.
           </h2>
         </div>
         <div className="sobre-grid">
@@ -26,20 +24,13 @@ export default function Sobre() {
           />
           <div className="sobre-text">
             <p>
-              A WM Consultoria atua desde 2014 na análise e desenvolvimento de
-              projetos de esquadrias de alumínio, fachadas e revestimentos para
-              construtoras e incorporadoras em todo o Brasil.
+              Atuamos na interseção entre a criatividade arquitetônica e a resistência dos materiais, oferecendo uma consultoria especializada em esquadria que dá suporte técnico e estrutural às fachadas mais ambiciosas da construção contemporânea.
             </p>
             <p>
-              À frente da empresa, a Arq. Miriam Pereira reúne mais de 40 anos
-              de experiência na coordenação de projetos com as principais
-              construtoras do país, incluindo 13 anos à frente do departamento
-              técnico do maior distribuidor de alumínio da América Latina.
+              A consultoria atua como elo técnico entre arquitetura, estrutura e execução, garantindo compatibilidade, desempenho e viabilidade económica em cada etapa do projeto.
             </p>
             <p>
-              A consultoria atua como elo técnico entre arquitetura, estrutura e
-              execução, garantindo compatibilidade, desempenho e viabilidade
-              econômica em cada etapa do projeto.
+              Compreendemos a esquadria não apenas como um componente visual, mas como uma solução complexa e vital que determina o desempenho final da obra.
             </p>
             <div className="sobre-tagline">
               Onde outros veem limites, nós encontramos soluções

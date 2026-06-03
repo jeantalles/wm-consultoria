@@ -22,7 +22,7 @@ export default function Nav() {
     <nav id="topo">
       <div className="nav-inner">
         <a href="/#hero" className="nav-logo" onClick={closeMenu}>
-          <img src="/img/logo.png" alt="WM Consultoria" />
+          <img src="/img/logo-dark.png" alt="WM Consultoria" />
         </a>
         
         <div className="nav-links desktop-only">
@@ -31,7 +31,7 @@ export default function Nav() {
           <a href="/#clientes">Clientes</a>
           <a href="/#contato">Contato</a>
           <a href="https://wa.me/5551999759015" className="btn-wa">
-            Fale conosco
+            WhatsApp
           </a>
         </div>
 
@@ -53,7 +53,7 @@ export default function Nav() {
             <a href="/#clientes" onClick={closeMenu} className="mobile-link" style={{ "--delay": "3" } as React.CSSProperties}>Clientes</a>
             <a href="/#contato" onClick={closeMenu} className="mobile-link" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
             <a href="https://wa.me/5551999759015" onClick={closeMenu} className="btn-wa mobile-cta" style={{ "--delay": "5" } as React.CSSProperties}>
-              Fale conosco
+              WhatsApp
             </a>
           </div>
         </div>
