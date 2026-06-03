@@ -27,7 +27,7 @@ const depoimentos = [
   {
     text: "A empresa WM Consultoria é uma grande parceira da Hydro ,com anos de experiencia no mercado, se destaca como uma das grandes empresas de consultoria de projetos de esquadrias e fachadas de aluminio. Com atuação em todo território nacional, a empresa trabalha integrada com arquitetos, engenheiros, construtoras sistemistas e fabricantes de esquadrias, para garantir soluções eficientes,seruras e compativeis com as normas tecnicas vigentes.",
     author: "Marcelo Santos",
-    role: "Gerente Comercial Mercado Construcão Civil",
+    role: "Gerente Construção Civil da Hydro do Brasil",
     photo: "/img/depoimentos/hydro.jpg",
     initials: "MS",
   },

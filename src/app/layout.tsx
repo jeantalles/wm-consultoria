@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "WM Consultoria — Esquadrias, Fachadas e Revestimentos",
@@ -21,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }
