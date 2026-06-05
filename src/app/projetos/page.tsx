@@ -6,7 +6,71 @@ import Footer from "../components/Footer";
 
 const L = "/img/projetos";
 
-const projetos = [
+const todosOsProjetos = [
+  {
+    title: "Pininfarina (PM031) – PR",
+    meta: "Plaenge Empreendimentos",
+    images: [
+      `${L}/plaenge-pm031-1.jpg`,
+      `${L}/plaenge-pm031-2.jpg`,
+      `${L}/plaenge-pm031-3.jpg`,
+    ],
+  },
+  {
+    title: "Pininfarina (PG104) – PR",
+    meta: "Plaenge Empreendimentos",
+    images: [
+      `${L}/plaenge-pg104-1.jpg`,
+      `${L}/plaenge-pg104-2.jpg`,
+    ],
+  },
+  {
+    title: "Phisys Place – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-phisis-place-1.jpg`,
+      `${L}/cba-phisis-place-2.jpg`,
+    ],
+  },
+  {
+    title: "Puerto Madero – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-puerto-madero-1.png`,
+      `${L}/cba-puerto-madero-2.png`,
+    ],
+  },
+  {
+    title: "One Petrópolis – RN",
+    meta: "Macam",
+    images: [
+      `${L}/macam-one-petropolis-1.jpg`,
+    ],
+  },
+  {
+    title: "Jano – SP",
+    meta: "RFM",
+    images: [
+      `${L}/rfm-jano-1.png`,
+      `${L}/rfm-jano-2.png`,
+    ],
+  },
+  {
+    title: "Vértice – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-vertice-1.jpg`,
+      `${L}/vokkan-vertice-2.jpg`,
+    ],
+  },
+  {
+    title: "Voz – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-voz-1.jpg`,
+      `${L}/vokkan-voz-2.jpg`,
+    ],
+  },
   {
     title: "Tonino Lamborghini Residences – SC",
     meta: "Embraed Empreendimentos",
@@ -590,6 +654,22 @@ const projetos = [
   },
 ];
 
+const EXCLUDED_CLIENTS = [
+  "RottaEly Construções",
+  "Wolens Incorporadora",
+  "Kopstein Incorporadora",
+  "UNA Construtora",
+  "Winter Construções",
+  "Ekko Group",
+  "Lumi",
+  "Incoben Incorporadora e Construtora",
+  "Econ Construtora"
+];
+
+const projetos = todosOsProjetos.filter(
+  (p) => !EXCLUDED_CLIENTS.includes(p.meta)
+);
+
 function ProjetoCard({
   projeto,
   onOpen,
@@ -753,6 +833,21 @@ function Lightbox({
 export default function ProjetosPage() {
   const [lightbox, setLightbox] = useState<{ projetoIndex: number; imgIndex: number } | null>(null);
 
+  // Group projects by client (meta)
+  const clientGroups = projetos.reduce((groups, p, originalIndex) => {
+    const client = p.meta;
+    if (!groups[client]) {
+      groups[client] = {
+        name: client,
+        projects: [],
+      };
+    }
+    groups[client].projects.push({ ...p, originalIndex });
+    return groups;
+  }, {} as Record<string, { name: string; projects: Array<typeof projetos[0] & { originalIndex: number }> }>);
+
+  const orderedGroups = Object.values(clientGroups);
+
   return (
     <>
       <Nav />
@@ -774,15 +869,25 @@ export default function ProjetosPage() {
 
         <section className="projetos-page-grid-section">
           <div className="projetos-page-container">
-            <div className="projetos-page-grid">
-              {projetos.map((p, i) => (
-                <ProjetoCard
-                  key={i}
-                  projeto={p}
-                  onOpen={(imgIndex) => setLightbox({ projetoIndex: i, imgIndex })}
-                />
-              ))}
-            </div>
+            {orderedGroups.map((group, groupIdx) => (
+              <div key={groupIdx} className="client-group">
+                <div className="client-group-header">
+                  <h3 className="client-group-title">{group.name}</h3>
+                  <span className="client-group-count">
+                    {group.projects.length} {group.projects.length === 1 ? "projeto" : "projetos"}
+                  </span>
+                </div>
+                <div className="projetos-page-grid">
+                  {group.projects.map((p) => (
+                    <ProjetoCard
+                      key={p.originalIndex}
+                      projeto={p}
+                      onOpen={(imgIndex) => setLightbox({ projetoIndex: p.originalIndex, imgIndex })}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </main>

@@ -46,10 +46,7 @@ export default function Projetos() {
           <h2 className="section-title">
             Desenvolvidos com as principais construtoras do Brasil.
           </h2>
-          <p className="section-sub">
-            Projetos de alto nível realizados em parceria com as maiores{" "}
-            <strong>incorporadoras do país.</strong>
-          </p>
+
         </div>
         <div className="projetos-grid">
           {projetos.slice(0, 4).map((p, i) => (
