@@ -26,8 +26,8 @@ nav { position: sticky; top: 0; z-index: 100; background: #D1E8F7; border-bottom
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { color: var(--navy); text-decoration: none; font-size: 14px; font-weight: 600; transition: color .2s; }
 .nav-links a:hover { color: var(--accent); }
-.btn-wa { background: #2A8FC4; color: #fff !important; text-decoration: none; font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 6px; transition: opacity .2s; }
-.btn-wa:hover { opacity: .88; }
+.btn-contato { background: var(--accent); color: #fff !important; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 6px; transition: opacity .2s, transform .2s; }
+.btn-contato:hover { opacity: .88; transform: translateY(-1px); }
 
 /* ── MOBILE MENU ── */
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; z-index: 101; position: relative; -webkit-tap-highlight-color: transparent; }

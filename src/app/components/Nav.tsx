@@ -29,7 +29,7 @@ export default function Nav() {
           <a href="/#servicos">Serviços</a>
           <a href="/#projetos">Projetos</a>
           <a href="/#clientes">Clientes</a>
-          <a href="/#contato">Contato</a>
+          <a href="/#contato" className="btn-contato">Contato</a>
 
         </div>
 
@@ -49,7 +49,7 @@ export default function Nav() {
             <a href="/#servicos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "1" } as React.CSSProperties}>Serviços</a>
             <a href="/#projetos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "2" } as React.CSSProperties}>Projetos</a>
             <a href="/#clientes" onClick={closeMenu} className="mobile-link" style={{ "--delay": "3" } as React.CSSProperties}>Clientes</a>
-            <a href="/#contato" onClick={closeMenu} className="mobile-link" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
+            <a href="/#contato" onClick={closeMenu} className="btn-contato mobile-cta" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
 
           </div>
         </div>
