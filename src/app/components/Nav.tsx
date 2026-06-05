@@ -30,9 +30,7 @@ export default function Nav() {
           <a href="/#projetos">Projetos</a>
           <a href="/#clientes">Clientes</a>
           <a href="/#contato">Contato</a>
-          <a href="https://wa.me/5551999759015" target="_blank" rel="noopener noreferrer" className="btn-wa">
-            WhatsApp
-          </a>
+
         </div>
 
         <button 
@@ -52,9 +50,7 @@ export default function Nav() {
             <a href="/#projetos" onClick={closeMenu} className="mobile-link" style={{ "--delay": "2" } as React.CSSProperties}>Projetos</a>
             <a href="/#clientes" onClick={closeMenu} className="mobile-link" style={{ "--delay": "3" } as React.CSSProperties}>Clientes</a>
             <a href="/#contato" onClick={closeMenu} className="mobile-link" style={{ "--delay": "4" } as React.CSSProperties}>Contato</a>
-            <a href="https://wa.me/5551999759015" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="btn-wa mobile-cta" style={{ "--delay": "5" } as React.CSSProperties}>
-              WhatsApp
-            </a>
+
           </div>
         </div>
       </div>

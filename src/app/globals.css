@@ -44,9 +44,9 @@ nav { position: sticky; top: 0; z-index: 100; background: #D1E8F7; border-bottom
 .mobile-menu.open { transform: translateX(0); }
 
 .mobile-menu-inner { display: flex; flex-direction: column; gap: 1.5rem; padding: 0 2rem; }
-.mobile-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 20px; font-weight: 500; opacity: 0; transform: translateY(15px); transition: opacity 300ms ease-out, transform 300ms ease-out, color 200ms ease; }
+.mobile-link { color: var(--navy); text-decoration: none; font-size: 20px; font-weight: 500; opacity: 0; transform: translateY(15px); transition: opacity 300ms ease-out, transform 300ms ease-out, color 200ms ease; }
 .mobile-menu.open .mobile-link { opacity: 1; transform: translateY(0); transition-delay: calc(var(--delay) * 50ms + 100ms); }
-.mobile-link:active { transform: scale(0.97); color: #fff; }
+.mobile-link:active { transform: scale(0.97); color: var(--accent); }
 .mobile-cta { margin-top: 1rem; width: fit-content; opacity: 0; transform: translateY(15px); transition: opacity 300ms ease-out, transform 300ms ease-out; }
 .mobile-menu.open .mobile-cta { opacity: 1; transform: translateY(0); transition-delay: calc(var(--delay) * 50ms + 100ms); }
 .mobile-cta:active { transform: scale(0.97); }
@@ -326,7 +326,7 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,.07); p
   .contato-box { padding: 2rem 1.5rem; }
   .contato .container { padding: 0 1.5rem; }
   
-  .footer-inner { padding: 0 1.5rem; flex-direction: column; text-align: center; justify-content: center; gap: 1.5rem; }
+  .footer-inner { padding: 0 1.5rem 4rem 1.5rem; flex-direction: column; text-align: center; justify-content: center; gap: 1.5rem; }
   .footer-logo { justify-content: center; }
 }
 
@@ -336,5 +336,5 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,.07); p
 .whatsapp-float:active { transform: scale(0.95); }
 @media (max-width: 768px) {
   .whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
-  .footer-inner { padding: 0 6rem 0 3rem; }
+
 }
