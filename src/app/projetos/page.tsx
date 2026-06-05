@@ -350,10 +350,8 @@ const todosOsProjetos = [
     title: "Vesta – RS",
     meta: "VCA Maggi Construtora e Incorporadora",
     images: [
-      `${L}/vesta-1.jpg`,
-      `${L}/vesta-2.jpg`,
-      `${L}/vesta-3.jpg`,
-      `${L}/vesta-4.jpg`,
+      `${L}/vca-maggi-vesta-1.jpg`,
+      `${L}/vca-maggi-vesta-2.jpg`,
     ],
   },
   {
