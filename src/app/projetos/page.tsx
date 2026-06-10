@@ -21,7 +21,6 @@ const todosOsProjetos = [
     meta: "Embraed Empreendimentos",
     images: [
       `${L}/solaia-1.jpg`,
-      `${L}/solaia-2.jpg`,
     ],
   },
   {
@@ -58,8 +57,6 @@ const todosOsProjetos = [
     meta: "Embraed Empreendimentos",
     images: [
       `${L}/aurora-1.jpg`,
-      `${L}/aurora-2.jpg`,
-      `${L}/aurora-3.jpg`,
       `${L}/aurora-4.jpg`,
     ],
   },
@@ -509,11 +506,6 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Urban Tower Residence – PR",
-    meta: "Construtora JL",
-    images: [`${L}/urban-tower-1.jpeg`],
-  },
-  {
     title: "Edifício Ópera – SC",
     meta: "Investcorp Empreendimentos",
     images: [
@@ -604,6 +596,7 @@ const todosOsProjetos = [
       `${L}/dmys-1.jpg`,
       `${L}/dmys-2.jpg`,
       `${L}/dmys-3.jpg`,
+      `${L}/dmys-4.jpg`,
     ],
   },
   {
@@ -871,9 +864,6 @@ export default function ProjetosPage() {
               <div key={groupIdx} className="client-group">
                 <div className="client-group-header">
                   <h3 className="client-group-title">{group.name}</h3>
-                  <span className="client-group-count">
-                    {group.projects.length} {group.projects.length === 1 ? "projeto" : "projetos"}
-                  </span>
                 </div>
                 <div className="projetos-page-grid">
                   {group.projects.map((p) => (
