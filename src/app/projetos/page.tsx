@@ -8,70 +8,6 @@ const L = "/img/projetos";
 
 const todosOsProjetos = [
   {
-    title: "Pininfarina (PM031) – PR",
-    meta: "Plaenge Empreendimentos",
-    images: [
-      `${L}/plaenge-pm031-1.jpg`,
-      `${L}/plaenge-pm031-2.jpg`,
-      `${L}/plaenge-pm031-3.jpg`,
-    ],
-  },
-  {
-    title: "Pininfarina (PG104) – PR",
-    meta: "Plaenge Empreendimentos",
-    images: [
-      `${L}/plaenge-pg104-1.jpg`,
-      `${L}/plaenge-pg104-2.jpg`,
-    ],
-  },
-  {
-    title: "Phisys Place – SC",
-    meta: "CBA",
-    images: [
-      `${L}/cba-phisis-place-1.jpg`,
-      `${L}/cba-phisis-place-2.jpg`,
-    ],
-  },
-  {
-    title: "Puerto Madero – SC",
-    meta: "CBA",
-    images: [
-      `${L}/cba-puerto-madero-1.png`,
-      `${L}/cba-puerto-madero-2.png`,
-    ],
-  },
-  {
-    title: "One Petrópolis – RN",
-    meta: "Macam",
-    images: [
-      `${L}/macam-one-petropolis-1.jpg`,
-    ],
-  },
-  {
-    title: "Jano – SP",
-    meta: "RFM",
-    images: [
-      `${L}/rfm-jano-1.png`,
-      `${L}/rfm-jano-2.png`,
-    ],
-  },
-  {
-    title: "Vértice – SC",
-    meta: "Vokkan",
-    images: [
-      `${L}/vokkan-vertice-1.jpg`,
-      `${L}/vokkan-vertice-2.jpg`,
-    ],
-  },
-  {
-    title: "Voz – SC",
-    meta: "Vokkan",
-    images: [
-      `${L}/vokkan-voz-1.jpg`,
-      `${L}/vokkan-voz-2.jpg`,
-    ],
-  },
-  {
     title: "Tonino Lamborghini Residences – SC",
     meta: "Embraed Empreendimentos",
     images: [
@@ -128,38 +64,20 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Bueno Brandão",
-    meta: "Tegra Incorporadora",
+    title: "Pininfarina (PM031) – PR",
+    meta: "Plaenge Empreendimentos",
     images: [
-      `${L}/bueno-brandao-1.jpg`,
-      `${L}/bueno-brandao-2.jpg`,
+      `${L}/plaenge-pm031-1.jpg`,
+      `${L}/plaenge-pm031-2.jpg`,
+      `${L}/plaenge-pm031-3.jpg`,
     ],
   },
   {
-    title: "Zahle Jardins – SP",
-    meta: "Tegra Incorporadora",
+    title: "Pininfarina (PG104) – PR",
+    meta: "Plaenge Empreendimentos",
     images: [
-      `${L}/zahle-1.jpg`,
-      `${L}/zahle-2.jpg`,
-      `${L}/zahle-3.jpg`,
-      `${L}/zahle-4.jpg`,
-    ],
-  },
-  {
-    title: "Soma Perdizes – SP",
-    meta: "Tegra Incorporadora",
-    images: [
-      `${L}/soma-perdizes-1.jpg`,
-      `${L}/soma-perdizes-2.jpg`,
-    ],
-  },
-  {
-    title: "Ode Perdizes – SP",
-    meta: "Tegra Incorporadora",
-    images: [
-      `${L}/ode-perdizes-1.jpg`,
-      `${L}/ode-perdizes-2.jpg`,
-      `${L}/ode-perdizes-3.jpg`,
+      `${L}/plaenge-pg104-1.jpg`,
+      `${L}/plaenge-pg104-2.jpg`,
     ],
   },
   {
@@ -213,6 +131,88 @@ const todosOsProjetos = [
     images: [
       `${L}/il-palagio-1.jpeg`,
       `${L}/il-palagio-2.jpeg`,
+    ],
+  },
+  {
+    title: "Phisys Place – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-phisis-place-1.jpg`,
+      `${L}/cba-phisis-place-2.jpg`,
+    ],
+  },
+  {
+    title: "Puerto Madero – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-puerto-madero-1.png`,
+      `${L}/cba-puerto-madero-2.png`,
+    ],
+  },
+  {
+    title: "One Petrópolis – RN",
+    meta: "Macam",
+    images: [
+      `${L}/macam-one-petropolis-1.jpg`,
+    ],
+  },
+  {
+    title: "Jano – SP",
+    meta: "RFM",
+    images: [
+      `${L}/rfm-jano-1.png`,
+      `${L}/rfm-jano-2.png`,
+    ],
+  },
+  {
+    title: "Vértice – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-vertice-1.jpg`,
+      `${L}/vokkan-vertice-2.jpg`,
+    ],
+  },
+  {
+    title: "Voz – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-voz-1.jpg`,
+      `${L}/vokkan-voz-2.jpg`,
+    ],
+  },
+  {
+    title: "Bueno Brandão",
+    meta: "Tegra Incorporadora",
+    images: [
+      `${L}/bueno-brandao-1.jpg`,
+      `${L}/bueno-brandao-2.jpg`,
+    ],
+  },
+  {
+    title: "Zahle Jardins – SP",
+    meta: "Tegra Incorporadora",
+    images: [
+      `${L}/zahle-1.jpg`,
+      `${L}/zahle-2.jpg`,
+      `${L}/zahle-3.jpg`,
+      `${L}/zahle-4.jpg`,
+    ],
+  },
+  {
+    title: "Soma Perdizes – SP",
+    meta: "Tegra Incorporadora",
+    images: [
+      `${L}/soma-perdizes-1.jpg`,
+      `${L}/soma-perdizes-2.jpg`,
+    ],
+  },
+  {
+    title: "Ode Perdizes – SP",
+    meta: "Tegra Incorporadora",
+    images: [
+      `${L}/ode-perdizes-1.jpg`,
+      `${L}/ode-perdizes-2.jpg`,
+      `${L}/ode-perdizes-3.jpg`,
     ],
   },
   {
