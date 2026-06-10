@@ -27,7 +27,7 @@ export default function Sobre() {
               Atuamos na interseção entre a criatividade arquitetônica e a resistência dos materiais, oferecendo uma consultoria especializada em esquadria que dá suporte técnico e estrutural às fachadas mais ambiciosas da construção contemporânea.
             </p>
             <p>
-              A consultoria atua como elo técnico entre arquitetura, estrutura e execução, garantindo compatibilidade, desempenho e viabilidade económica em cada etapa do projeto.
+              A consultoria atua como elo técnico entre arquitetura, estrutura e execução, garantindo compatibilidade, desempenho e viabilidade econômica em cada etapa do projeto.
             </p>
             <p>
               Compreendemos a esquadria não apenas como um componente visual, mas como uma solução complexa e vital que determina o desempenho final da obra.
