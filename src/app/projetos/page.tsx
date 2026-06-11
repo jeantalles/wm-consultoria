@@ -131,53 +131,6 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Phisys Place – SC",
-    meta: "CBA",
-    images: [
-      `${L}/cba-phisis-place-1.jpg`,
-      `${L}/cba-phisis-place-2.jpg`,
-    ],
-  },
-  {
-    title: "Puerto Madero – SC",
-    meta: "CBA",
-    images: [
-      `${L}/cba-puerto-madero-1.png`,
-      `${L}/cba-puerto-madero-2.png`,
-    ],
-  },
-  {
-    title: "One Petrópolis – RN",
-    meta: "Macam",
-    images: [
-      `${L}/macam-one-petropolis-1.jpg`,
-    ],
-  },
-  {
-    title: "Jano – SP",
-    meta: "RFM",
-    images: [
-      `${L}/rfm-jano-1.png`,
-      `${L}/rfm-jano-2.png`,
-    ],
-  },
-  {
-    title: "Vértice – SC",
-    meta: "Vokkan",
-    images: [
-      `${L}/vokkan-vertice-1.jpg`,
-      `${L}/vokkan-vertice-2.jpg`,
-    ],
-  },
-  {
-    title: "Voz – SC",
-    meta: "Vokkan",
-    images: [
-      `${L}/vokkan-voz-1.jpg`,
-      `${L}/vokkan-voz-2.jpg`,
-    ],
-  },
-  {
     title: "Bueno Brandão",
     meta: "Tegra Incorporadora",
     images: [
@@ -213,6 +166,23 @@ const todosOsProjetos = [
     ],
   },
   {
+    title: "Mudrá Full Living – RJ",
+    meta: "Cyrela Empreendimentos",
+    images: [
+      `${L}/mudra-1.jpg`,
+      `${L}/mudra-2.jpg`,
+      `${L}/mudra-3.jpg`,
+    ],
+  },
+  {
+    title: "Atmosfera Condominium Park – RJ",
+    meta: "Cyrela Empreendimentos",
+    images: [
+      `${L}/atmosfera-1.jpg`,
+      `${L}/atmosfera-2.jpg`,
+    ],
+  },
+  {
     title: "Bela Vista",
     meta: "Vitacon",
     images: [
@@ -245,14 +215,190 @@ const todosOsProjetos = [
     ],
   },
   {
+    title: "D/Sense",
+    meta: "Dimas Construções",
+    images: [
+      `${L}/dsense-1.jpeg`,
+      `${L}/dsense-2.jpeg`,
+    ],
+  },
+  {
+    title: "D/Mys Home Design – SC",
+    meta: "Dimas Construções",
+    images: [
+      `${L}/dmys-1.jpg`,
+      `${L}/dmys-2.jpg`,
+      `${L}/dmys-3.jpg`,
+      `${L}/dmys-4.jpg`,
+    ],
+  },
+  {
+    title: "D/Yard Home Design – SC",
+    meta: "Dimas Construções",
+    images: [
+      `${L}/dyard-1.jpg`,
+      `${L}/dyard-2.jpg`,
+      `${L}/dyard-3.jpg`,
+    ],
+  },
+  {
+    title: "D/Spot – SC",
+    meta: "Dimas Construções",
+    images: [
+      `${L}/dspot-1.jpg`,
+      `${L}/dspot-2.jpg`,
+      `${L}/dspot-3.jpg`,
+    ],
+  },
+  {
+    title: "Torres da Brava (Brisa) – SC",
+    meta: "Lotisa Empreendimentos",
+    images: [
+      `${L}/torres-brisa-1.jpg`,
+      `${L}/torres-brisa-2.jpg`,
+    ],
+  },
+  {
+    title: "Vista Mare Residencial – SC",
+    meta: "Lotisa Empreendimentos",
+    images: [
+      `${L}/vista-mare-1.jpg`,
+      `${L}/vista-mare-2.jpg`,
+    ],
+  },
+  {
+    title: "Serenity Residence – SC",
+    meta: "Lotisa Empreendimentos",
+    images: [
+      `${L}/serenity-1.jpg`,
+      `${L}/serenity-2.jpg`,
+    ],
+  },
+  {
+    title: "Lotisa Garden Plaza – SC",
+    meta: "Lotisa Empreendimentos",
+    images: [`${L}/garden-plaza-1.png`],
+  },
+  {
+    title: "Phisys Place – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-phisis-place-1.jpg`,
+      `${L}/cba-phisis-place-2.jpg`,
+    ],
+  },
+  {
+    title: "Puerto Madero – SC",
+    meta: "CBA",
+    images: [
+      `${L}/cba-puerto-madero-1.png`,
+      `${L}/cba-puerto-madero-2.png`,
+    ],
+  },
+  {
+    title: "Edifício Travéza – PR",
+    meta: "Construtora Just",
+    images: [`${L}/traveza-1.jpeg`],
+  },
+  {
+    title: "Cipriano Residence – PR",
+    meta: "Construtora Just",
+    images: [
+      `${L}/cipriano-1.jpg`,
+      `${L}/cipriano-2.jpg`,
+      `${L}/cipriano-3.jpg`,
+    ],
+  },
+  {
+    title: "One Petrópolis – RN",
+    meta: "Macam",
+    images: [
+      `${L}/macam-one-petropolis-1.jpg`,
+    ],
+  },
+  {
+    title: "Vértice – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-vertice-1.jpg`,
+      `${L}/vokkan-vertice-2.jpg`,
+    ],
+  },
+  {
+    title: "Voz – SC",
+    meta: "Vokkan",
+    images: [
+      `${L}/vokkan-voz-1.jpg`,
+      `${L}/vokkan-voz-2.jpg`,
+    ],
+  },
+  {
     title: "Vista Jardins",
     meta: "Torresani e Vokkan",
     images: [`${L}/vista-jardins-1.jpg`],
   },
   {
-    title: "Trend 24",
-    meta: "Construtora Maiojama",
-    images: [`${L}/trend-24-1.jpg`],
+    title: "Raiz By Paulo Mauro – SP",
+    meta: "Paulo Mauro Construtora",
+    images: [
+      `${L}/raiz-1.jpg`,
+      `${L}/raiz-2.jpg`,
+    ],
+  },
+  {
+    title: "MOV Perdizes – SP",
+    meta: "Paulo Mauro Construtora",
+    images: [
+      `${L}/mov-perdizes-1.jpg`,
+      `${L}/mov-perdizes-2.jpg`,
+    ],
+  },
+  {
+    title: "Jano – SP",
+    meta: "RFM",
+    images: [
+      `${L}/rfm-jano-1.png`,
+      `${L}/rfm-jano-2.png`,
+    ],
+  },
+  {
+    title: "Nature Residence – DF",
+    meta: "Elmo Engenharia",
+    images: [`${L}/nature-1.jpg`],
+  },
+  {
+    title: "Acqua Design – TO",
+    meta: "Elmo Engenharia",
+    images: [
+      `${L}/acqua-1.jpg`,
+      `${L}/acqua-2.jpg`,
+    ],
+  },
+  {
+    title: "Haus 34 – RJ",
+    meta: "INTI Empreendimentos",
+    images: [
+      `${L}/haus-34-1.jpeg`,
+      `${L}/haus-34-2.jpeg`,
+    ],
+  },
+  {
+    title: "GRID Residencial – RJ",
+    meta: "INTI Empreendimentos",
+    images: [
+      `${L}/grid-1.jpg`,
+      `${L}/grid-2.jpg`,
+    ],
+  },
+  {
+    title: "Sunstar Tower – SC",
+    meta: "Sunprime Empreendimentos",
+    images: [
+      `${L}/sunstar-1.jpg`,
+      `${L}/sunstar-2.jpg`,
+      `${L}/sunstar-3.jpg`,
+      `${L}/sunstar-4.jpg`,
+    ],
   },
   {
     title: "Pinheiros By Passarelli",
@@ -261,6 +407,19 @@ const todosOsProjetos = [
       `${L}/pinheiros-1.jpg`,
       `${L}/pinheiros-2.jpg`,
     ],
+  },
+  {
+    title: "Deck 330 – SP",
+    meta: "Tarraf",
+    images: [
+      `${L}/deck-330-1.jpg`,
+      `${L}/deck-330-2.jpg`,
+    ],
+  },
+  {
+    title: "Trend 24",
+    meta: "Construtora Maiojama",
+    images: [`${L}/trend-24-1.jpg`],
   },
   {
     title: "Reserva Golf Shopping",
@@ -273,14 +432,6 @@ const todosOsProjetos = [
     images: [
       `${L}/ekko-alpha-1.jpg`,
       `${L}/ekko-alpha-2.jpg`,
-    ],
-  },
-  {
-    title: "D/Sense",
-    meta: "Dimas Construções",
-    images: [
-      `${L}/dsense-1.jpeg`,
-      `${L}/dsense-2.jpeg`,
     ],
   },
   {
@@ -298,27 +449,6 @@ const todosOsProjetos = [
     images: [
       `${L}/lumi-1.jpg`,
       `${L}/lumi-2.jpg`,
-    ],
-  },
-  {
-    title: "Deck 330 – SP",
-    meta: "Tarraf",
-    images: [
-      `${L}/deck-330-1.jpg`,
-      `${L}/deck-330-2.jpg`,
-    ],
-  },
-  {
-    title: "Nature Residence – DF",
-    meta: "Elmo Engenharia",
-    images: [`${L}/nature-1.jpg`],
-  },
-  {
-    title: "Acqua Design – TO",
-    meta: "Elmo Engenharia",
-    images: [
-      `${L}/acqua-1.jpg`,
-      `${L}/acqua-2.jpg`,
     ],
   },
   {
@@ -378,16 +508,6 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Sunstar Tower – SC",
-    meta: "Sunprime Empreendimentos",
-    images: [
-      `${L}/sunstar-1.jpg`,
-      `${L}/sunstar-2.jpg`,
-      `${L}/sunstar-3.jpg`,
-      `${L}/sunstar-4.jpg`,
-    ],
-  },
-  {
     title: "135 Jardins – SC",
     meta: "Silva Packer",
     images: [
@@ -397,57 +517,12 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Raiz By Paulo Mauro – SP",
-    meta: "Paulo Mauro Construtora",
-    images: [
-      `${L}/raiz-1.jpg`,
-      `${L}/raiz-2.jpg`,
-    ],
-  },
-  {
-    title: "MOV Perdizes – SP",
-    meta: "Paulo Mauro Construtora",
-    images: [
-      `${L}/mov-perdizes-1.jpg`,
-      `${L}/mov-perdizes-2.jpg`,
-    ],
-  },
-  {
     title: "Manhattan Flats – SC",
     meta: "N1 Construtora e Incorporadora",
     images: [
       `${L}/manhattan-1.jpg`,
       `${L}/manhattan-2.jpg`,
     ],
-  },
-  {
-    title: "Torres da Brava (Brisa) – SC",
-    meta: "Lotisa Empreendimentos",
-    images: [
-      `${L}/torres-brisa-1.jpg`,
-      `${L}/torres-brisa-2.jpg`,
-    ],
-  },
-  {
-    title: "Vista Mare Residencial – SC",
-    meta: "Lotisa Empreendimentos",
-    images: [
-      `${L}/vista-mare-1.jpg`,
-      `${L}/vista-mare-2.jpg`,
-    ],
-  },
-  {
-    title: "Serenity Residence – SC",
-    meta: "Lotisa Empreendimentos",
-    images: [
-      `${L}/serenity-1.jpg`,
-      `${L}/serenity-2.jpg`,
-    ],
-  },
-  {
-    title: "Lotisa Garden Plaza – SC",
-    meta: "Lotisa Empreendimentos",
-    images: [`${L}/garden-plaza-1.png`],
   },
   {
     title: "Germano Petersen, 70 – RS",
@@ -492,20 +567,6 @@ const todosOsProjetos = [
     ],
   },
   {
-    title: "Edifício Travéza – PR",
-    meta: "Construtora Just",
-    images: [`${L}/traveza-1.jpeg`],
-  },
-  {
-    title: "Cipriano Residence – PR",
-    meta: "Construtora Just",
-    images: [
-      `${L}/cipriano-1.jpg`,
-      `${L}/cipriano-2.jpg`,
-      `${L}/cipriano-3.jpg`,
-    ],
-  },
-  {
     title: "Edifício Ópera – SC",
     meta: "Investcorp Empreendimentos",
     images: [
@@ -534,22 +595,6 @@ const todosOsProjetos = [
     images: [
       `${L}/amaluna-1.jpg`,
       `${L}/amaluna-2.jpg`,
-    ],
-  },
-  {
-    title: "Haus 34 – RJ",
-    meta: "INTI Empreendimentos",
-    images: [
-      `${L}/haus-34-1.jpeg`,
-      `${L}/haus-34-2.jpeg`,
-    ],
-  },
-  {
-    title: "GRID Residencial – RJ",
-    meta: "INTI Empreendimentos",
-    images: [
-      `${L}/grid-1.jpg`,
-      `${L}/grid-2.jpg`,
     ],
   },
   {
@@ -590,51 +635,6 @@ const todosOsProjetos = [
     images: [`${L}/ocean-view-sp-1.jpeg`],
   },
   {
-    title: "D/Mys Home Design – SC",
-    meta: "Dimas Construções",
-    images: [
-      `${L}/dmys-1.jpg`,
-      `${L}/dmys-2.jpg`,
-      `${L}/dmys-3.jpg`,
-      `${L}/dmys-4.jpg`,
-    ],
-  },
-  {
-    title: "D/Yard Home Design – SC",
-    meta: "Dimas Construções",
-    images: [
-      `${L}/dyard-1.jpg`,
-      `${L}/dyard-2.jpg`,
-      `${L}/dyard-3.jpg`,
-    ],
-  },
-  {
-    title: "D/Spot – SC",
-    meta: "Dimas Construções",
-    images: [
-      `${L}/dspot-1.jpg`,
-      `${L}/dspot-2.jpg`,
-      `${L}/dspot-3.jpg`,
-    ],
-  },
-  {
-    title: "Mudrá Full Living – RJ",
-    meta: "Cyrela Empreendimentos",
-    images: [
-      `${L}/mudra-1.jpg`,
-      `${L}/mudra-2.jpg`,
-      `${L}/mudra-3.jpg`,
-    ],
-  },
-  {
-    title: "Atmosfera Condominium Park – RJ",
-    meta: "Cyrela Empreendimentos",
-    images: [
-      `${L}/atmosfera-1.jpg`,
-      `${L}/atmosfera-2.jpg`,
-    ],
-  },
-  {
     title: "Voga Bela Vista – RS",
     meta: "CFL Incorporadora",
     images: [
@@ -642,7 +642,7 @@ const todosOsProjetos = [
       `${L}/voga-2.jpg`,
       `${L}/voga-3.jpg`,
     ],
-  },
+  }
 ];
 
 const EXCLUDED_CLIENTS = [
